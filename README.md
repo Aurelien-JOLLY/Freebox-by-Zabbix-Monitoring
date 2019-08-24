@@ -69,7 +69,7 @@ Restart the cron service :
     service cron restart
 
 
-## 2.5. Zabbix template import
+# 3. Zabbix template import
 
 The file [zbx_freebox_export_templates.xml](./zbx_freebox_export_templates.xml) is the Freebox template for Zabbix.
 
