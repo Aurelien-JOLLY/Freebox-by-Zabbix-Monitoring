@@ -9,7 +9,7 @@ I've added the zabbix template to add easily datas into this wonderful monitorin
 
 Sorry for the quality of my source code, I'm learning Bash and Zabbix with this project! 
 
-Thanks to [JrCs](https://github.com/JrCs/freeboxos-bash-api) for his code. That was a good start with his script.
+Thanks to [JrCs](https://github.com/JrCs/freeboxos-bash-api) for his code. That was a good start with his script. But I had to optimize it because the JSON parsing was not perfect... I replaced it in the code by [jq](https://stedolan.github.io/jq/) command-line.
 
 # 1. Prerequites
 
