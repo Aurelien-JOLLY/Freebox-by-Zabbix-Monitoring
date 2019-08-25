@@ -32,8 +32,11 @@ Create a directory to copy script files :
 
     installDir="/usr/src/zabbix/custom_scripts/freebox/"
     mkdir $installDir
+    cd $installDir
+    curl -l https://github.com/Aurelien-JOLLY/Freebox-by-Zabbix-Monitoring/blob/master/freeboxos_zabbix_library.sh > freeboxos_zabbix_library.sh
+    curl -l https://github.com/Aurelien-JOLLY/Freebox-by-Zabbix-Monitoring/blob/master/get_freebox_data.sh > get_freebox_data.sh
 
-Copy 01_authorize_App.sh, freeboxos_zabbix_library.sh and get_freebox_data.sh into this new directory.
+Copy freeboxos_zabbix_library.sh and get_freebox_data.sh into this new directory.
 
 ## 2.3. Authorize app to call Freebox API
 
