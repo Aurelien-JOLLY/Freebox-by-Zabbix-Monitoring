@@ -1,7 +1,7 @@
 
 # Freebox-by-Zabbix-Monitoring
 
-With this files, you will be able to monitor some metrics of your Freebox Revolution.
+With this files, you will be able to monitor some metrics of your Freebox Revolution with Zabbix.
 
 This script gets datas from Freebox, and sends it to Zabbix Server.
 
@@ -88,4 +88,8 @@ That's it!
 ![Freebox template screen](./freebox_zabbix_template_screen.png)
 
 
-Have fun!
+# 4. Notes
+
+Zabbix datas can be plugged to Grafana. It gives wonderful graphs!
+
+Enjoy!
