@@ -82,6 +82,22 @@ for i in {1..4}; do
 done
 echo -e "${GREEN_COLOR}[OK]${NO_COLOR}"
 
+
+echo -n "Get Disk datas... "
+answer=$(call_freebox_api "/storage/disk/?_dc=$epochNow")
+result_storage_disk_spinning=$(get_json_value_for_key "$answer" 'result[0].spinning')
+result_storage_disk_idle=$(get_json_value_for_key "$answer" 'result[0].idle')
+result_storage_disk_state=$(get_json_value_for_key "$answer" 'result[0].state')
+result_storage_disk_total_bytes=$(get_json_value_for_key "$answer" 'result[0].total_bytes')
+result_storage_disk_partition_0_total_bytes=$(get_json_value_for_key "$answer" 'result[0].partitions[0].total_bytes')
+result_storage_disk_partition_0_fsck_result=$(get_json_value_for_key "$answer" 'result[0].partitions[0].fsck_result')
+result_storage_disk_partition_0_free_bytes=$(get_json_value_for_key "$answer" 'result[0].partitions[0].free_bytes')
+result_storage_disk_partition_0_used_bytes=$(get_json_value_for_key "$answer" 'result[0].partitions[0].used_bytes')
+echo -e "${GREEN_COLOR}[OK]${NO_COLOR}"
+
+
+
+
 # -------------------------------------------------------------------------------
 # RETRIEVE INFOS - END
 # -------------------------------------------------------------------------------
@@ -112,6 +128,14 @@ $FREEBOX_HOST freebox.result.rrd_tx_3 $result_rrd_tx_3
 $FREEBOX_HOST freebox.result.rrd_rx_3 $result_rrd_rx_3
 $FREEBOX_HOST freebox.result.rrd_tx_4 $result_rrd_tx_4
 $FREEBOX_HOST freebox.result.rrd_rx_4 $result_rrd_rx_4
+$FREEBOX_HOST freebox.result.storage.disk.spinning $result_storage_disk_spinning
+$FREEBOX_HOST freebox.result.storage.disk.idle $result_storage_disk_idle
+$FREEBOX_HOST freebox.result.storage.disk.state $result_storage_disk_state
+$FREEBOX_HOST freebox.result.storage.disk.total_bytes $result_storage_disk_total_bytes
+$FREEBOX_HOST freebox.result.storage.disk.0.total_bytes $result_storage_disk_partition_0_total_bytes
+$FREEBOX_HOST freebox.result.storage.disk.0.fsck_result $result_storage_disk_partition_0_fsck_result
+$FREEBOX_HOST freebox.result.storage.disk.0.free_bytes $result_storage_disk_partition_0_free_bytes
+$FREEBOX_HOST freebox.result.storage.disk.0.used_bytes $result_storage_disk_partition_0_used_bytes 
 EOF
 
 echo -e "${GREEN_COLOR}[OK]${NO_COLOR}"
