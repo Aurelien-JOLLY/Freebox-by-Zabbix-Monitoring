@@ -1,5 +1,30 @@
 #!/bin/bash
 
+function concatLineIfNecessary() {
+    local strRet="$1"
+    local freebox_host="$2"
+    local strKey="$3"
+    local strValue="$4"
+
+    if [ -z "$strRet" ]; then
+        if [ -n "$strValue" ]; then
+            strRet="$freebox_host $strKey $strValue"
+        fi
+    elif [ -n "$strRet" ]; then
+        if [ -n "$strValue" ]; then
+            strRet="$strRet"`cat <<EOF
+
+$freebox_host $strKey $strValue
+EOF
+`
+        fi
+    fi
+
+    echo "$strRet"
+}
+
+
+
 ts=$(date +%s%N)
 
 FREEBOX_HOST="Freebox"
@@ -108,34 +133,39 @@ logout_freebox
 echo -e "${GREEN_COLOR}[OK]${NO_COLOR}"
 
 echo -n "Write to data file... "
+
+
+strContent=""
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.bytes_up" "$result_bytes_up")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.bytes_down" "$result_bytes_down")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.state" "$result_state")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.media" "$result_media")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.fans.0.value" "$result_fans_0_value")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.sensors.0.value" "$result_sensors_0_value")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.sensors.1.value" "$result_sensors_1_value")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.sensors.2.value" "$result_sensors_2_value")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.sensors.3.value" "$result_sensors_3_value")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.uptime_val" "$result_uptime_val")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.nbActiveDevices" "$result_nb_active_devices")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_tx_1" "$result_rrd_tx_1")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_rx_1" "$result_rrd_rx_1")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_tx_2" "$result_rrd_tx_2")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_rx_2" "$result_rrd_rx_2")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_tx_3" "$result_rrd_tx_3")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_rx_3" "$result_rrd_rx_3")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_tx_4" "$result_rrd_tx_4")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.rrd_rx_4" "$result_rrd_rx_4")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.spinning" "$result_storage_disk_spinning")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.idle" "$result_storage_disk_idle")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.state" "$result_storage_disk_state")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.total_bytes" "$result_storage_disk_total_bytes")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.0.total_bytes" "$result_storage_disk_partition_0_total_bytes")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.0.fsck_result" "$result_storage_disk_partition_0_fsck_result")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.0.free_bytes" "$result_storage_disk_partition_0_free_bytes")
+strContent=$(concatLineIfNecessary "$strContent" "$FREEBOX_HOST" "freebox.result.storage.disk.0.used_bytes" "$result_storage_disk_partition_0_used_bytes")
+
 cat > $DATA_VALUES_FILE <<EOF
-$FREEBOX_HOST freebox.result.bytes_up $result_bytes_up
-$FREEBOX_HOST freebox.result.bytes_down $result_bytes_down
-$FREEBOX_HOST freebox.result.state $result_state
-$FREEBOX_HOST freebox.result.media $result_media
-$FREEBOX_HOST freebox.result.fans.0.value $result_fans_0_value
-$FREEBOX_HOST freebox.result.sensors.0.value $result_sensors_0_value
-$FREEBOX_HOST freebox.result.sensors.1.value $result_sensors_1_value
-$FREEBOX_HOST freebox.result.sensors.2.value $result_sensors_2_value
-$FREEBOX_HOST freebox.result.sensors.3.value $result_sensors_3_value
-$FREEBOX_HOST freebox.result.uptime_val $result_uptime_val
-$FREEBOX_HOST freebox.result.nbActiveDevices $result_nb_active_devices
-$FREEBOX_HOST freebox.result.rrd_tx_1 $result_rrd_tx_1
-$FREEBOX_HOST freebox.result.rrd_rx_1 $result_rrd_rx_1
-$FREEBOX_HOST freebox.result.rrd_tx_2 $result_rrd_tx_2
-$FREEBOX_HOST freebox.result.rrd_rx_2 $result_rrd_rx_2
-$FREEBOX_HOST freebox.result.rrd_tx_3 $result_rrd_tx_3
-$FREEBOX_HOST freebox.result.rrd_rx_3 $result_rrd_rx_3
-$FREEBOX_HOST freebox.result.rrd_tx_4 $result_rrd_tx_4
-$FREEBOX_HOST freebox.result.rrd_rx_4 $result_rrd_rx_4
-$FREEBOX_HOST freebox.result.storage.disk.spinning $result_storage_disk_spinning
-$FREEBOX_HOST freebox.result.storage.disk.idle $result_storage_disk_idle
-$FREEBOX_HOST freebox.result.storage.disk.state $result_storage_disk_state
-$FREEBOX_HOST freebox.result.storage.disk.total_bytes $result_storage_disk_total_bytes
-$FREEBOX_HOST freebox.result.storage.disk.0.total_bytes $result_storage_disk_partition_0_total_bytes
-$FREEBOX_HOST freebox.result.storage.disk.0.fsck_result $result_storage_disk_partition_0_fsck_result
-$FREEBOX_HOST freebox.result.storage.disk.0.free_bytes $result_storage_disk_partition_0_free_bytes
-$FREEBOX_HOST freebox.result.storage.disk.0.used_bytes $result_storage_disk_partition_0_used_bytes 
+$strContent
 EOF
 
 echo -e "${GREEN_COLOR}[OK]${NO_COLOR}"
