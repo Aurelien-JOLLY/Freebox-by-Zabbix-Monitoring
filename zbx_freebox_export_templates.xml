@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.0</version>
-    <date>2019-08-29T21:35:56Z</date>
+    <version>4.4</version>
+    <date>2020-01-18T17:36:47Z</date>
     <groups>
         <group>
             <name>Internet Box</name>
@@ -11,7 +11,11 @@
         <template>
             <template>Template Freebox</template>
             <name>Template Freebox</name>
-            <description/>
+            <templates>
+                <template>
+                    <name>Template Module ICMP Ping</name>
+                </template>
+            </templates>
             <groups>
                 <group>
                     <name>Internet Box</name>
@@ -31,1047 +35,242 @@
             <items>
                 <item>
                     <name>Download rate</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.bytes_down</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>10</type>
+                            <type>CHANGE_PER_SECOND</type>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Upload rate</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.bytes_up</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>10</type>
+                            <type>CHANGE_PER_SECOND</type>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Fan speed</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.fans.0.value</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Rpm</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>State</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Internet connection type</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.media</key>
                     <delay>0</delay>
                     <history>2d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <value_type>TEXT</value_type>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Active devices</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.nbActiveDevices</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Incoming network traffic on Port 1</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_rx_1</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Incoming network traffic on Port 2</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_rx_2</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Incoming network traffic on Port 3</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_rx_3</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Incoming network traffic on Port 4</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_rx_4</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Outgoing network traffic on Port 1</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_tx_1</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Outgoing network traffic on Port 2</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_tx_2</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Outgoing network traffic on Port 3</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_tx_3</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Outgoing network traffic on Port 4</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.rrd_tx_4</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>Bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>HDD Temperature</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.sensors.0.value</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>°C</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>State</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Switch Temperature</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.sensors.1.value</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>°C</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>State</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>CPU M Temperature</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.sensors.2.value</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>°C</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>State</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>CPU B Temperature</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.sensors.3.value</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>°C</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>State</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Internet connection state</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.state</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -1080,428 +279,130 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>6</type>
+                            <type>BOOL_TO_DECIMAL</type>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Connection state is down</name>
+                            <priority>HIGH</priority>
+                            <description>Connection state is down</description>
+                        </trigger>
+                        <trigger>
+                            <expression>{nodata({$FREEBOX_NO_DATA_ALERT_SECONDS})}=1</expression>
+                            <name>No data for a long time ({$FREEBOX_NO_DATA_ALERT_SECONDS}s)</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Disk partition free space</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.0.free_bytes</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>B</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Disk partition health state</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.0.fsck_result</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <value_type>TEXT</value_type>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(fs_needs_correction)}=1 or &#13;
+{str(failed)}=1</expression>
+                            <name>Freebox disk has errors</name>
+                            <priority>HIGH</priority>
+                            <description>Freebox disk has bad state health.&#13;
+Last value: {ITEM.LASTVALUE1}.</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Disk partition capacity</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.0.total_bytes</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>B</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Disk partition used space</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.0.used_bytes</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>B</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Disk is idle</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.idle</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>6</type>
+                            <type>BOOL_TO_DECIMAL</type>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Disk is spinning</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.spinning</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>6</type>
+                            <type>BOOL_TO_DECIMAL</type>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Disk state</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.state</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
@@ -1510,166 +411,53 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>6</type>
+                            <type>BOOL_TO_DECIMAL</type>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Disk capacity</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.storage.disk.total_bytes</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>B</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Storage</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Uptime</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>TRAP</type>
                     <key>freebox.result.uptime_val</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>uptime</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>State</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <triggers>
+                        <trigger>
+                            <expression>{change(0)}&lt;0</expression>
+                            <name>{HOST.NAME} has just been restarted</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
                 </item>
             </items>
-            <discovery_rules/>
-            <httptests/>
             <macros>
                 <macro>
                     <macro>{$FREEBOX_NO_DATA_ALERT_SECONDS}</macro>
                     <value>300</value>
                 </macro>
             </macros>
-            <templates>
-                <template>
-                    <name>Template Module ICMP Ping</name>
-                </template>
-            </templates>
             <screens>
                 <screen>
                     <name>Freebox</name>
@@ -1678,6 +466,11 @@
                     <screen_items>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Freebox active devices</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>0</x>
@@ -1687,19 +480,19 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Freebox active devices</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Download and upload rate</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>1</x>
@@ -1709,41 +502,41 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Download and upload rate</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
-                            <width>500</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>1</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
                             <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Freebox temperatures</name>
                                 <host>Template Freebox</host>
                             </resource>
-                            <max_columns>3</max_columns>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Incoming and outgoing network traffics on Port 1</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>1</x>
@@ -1753,19 +546,19 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Incoming and outgoing network traffics on Port 1</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Incoming and outgoing network traffics on Port 2</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>2</x>
@@ -1775,19 +568,19 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Incoming and outgoing network traffics on Port 2</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Freebox fan speed</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>0</x>
@@ -1797,19 +590,19 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Freebox fan speed</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Incoming and outgoing network traffics on Port 3</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>1</x>
@@ -1819,19 +612,19 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Incoming and outgoing network traffics on Port 3</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                         <screen_item>
                             <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Incoming and outgoing network traffics on Port 4</name>
+                                <host>Template Freebox</host>
+                            </resource>
                             <width>500</width>
                             <height>100</height>
                             <x>2</x>
@@ -1841,116 +634,23 @@
                             <elements>0</elements>
                             <valign>0</valign>
                             <halign>0</halign>
-                            <style>0</style>
-                            <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Incoming and outgoing network traffics on Port 4</name>
-                                <host>Template Freebox</host>
-                            </resource>
-                            <max_columns>3</max_columns>
+                            <url/>
                             <application/>
+                            <max_columns>3</max_columns>
                         </screen_item>
                     </screen_items>
                 </screen>
             </screens>
         </template>
     </templates>
-    <triggers>
-        <trigger>
-            <expression>{Template Freebox:freebox.result.state.last()}=0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Connection state is down</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description>Connection state is down</description>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template Freebox:freebox.result.storage.disk.0.fsck_result.str(fs_needs_correction)}=1 or &#13;
-{Template Freebox:freebox.result.storage.disk.0.fsck_result.str(failed)}=1</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Freebox disk has errors</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description>Freebox disk has bad state health.&#13;
-Last value: {ITEM.LASTVALUE1}.</description>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template Freebox:freebox.result.state.nodata({$FREEBOX_NO_DATA_ALERT_SECONDS})}=1</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>No data for a long time ({$FREEBOX_NO_DATA_ALERT_SECONDS}s)</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template Freebox:freebox.result.uptime_val.change(0)}&lt;0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>{HOST.NAME} has just been restarted</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>1</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-    </triggers>
     <graphs>
         <graph>
             <name>Download and upload rate</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.bytes_down</key>
@@ -1958,11 +658,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.bytes_up</key>
@@ -1972,29 +668,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Freebox active devices</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.nbActiveDevices</key>
@@ -2004,29 +680,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Freebox disk</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.storage.disk.0.total_bytes</key>
@@ -2034,11 +690,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.storage.disk.0.free_bytes</key>
@@ -2046,11 +698,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
                     <color>2774A4</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.storage.disk.0.used_bytes</key>
@@ -2060,29 +708,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Freebox fan speed</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.fans.0.value</key>
@@ -2092,29 +720,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Freebox temperatures</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.sensors.3.value</key>
@@ -2122,11 +730,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.sensors.2.value</key>
@@ -2134,11 +738,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
                     <color>2774A4</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.sensors.0.value</key>
@@ -2146,11 +746,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>3</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F7941D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.sensors.1.value</key>
@@ -2160,29 +756,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Incoming and outgoing network traffics on Port 1</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_rx_1</key>
@@ -2190,11 +766,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_tx_1</key>
@@ -2204,29 +776,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Incoming and outgoing network traffics on Port 2</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_rx_2</key>
@@ -2234,11 +786,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_tx_2</key>
@@ -2248,29 +796,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Incoming and outgoing network traffics on Port 3</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_rx_3</key>
@@ -2278,11 +806,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_tx_3</key>
@@ -2292,29 +816,9 @@ Last value: {ITEM.LASTVALUE1}.</description>
         </graph>
         <graph>
             <name>Incoming and outgoing network traffics on Port 4</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>199C0D</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_rx_4</key>
@@ -2322,11 +826,7 @@ Last value: {ITEM.LASTVALUE1}.</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>Template Freebox</host>
                         <key>freebox.result.rrd_tx_4</key>
